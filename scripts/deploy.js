@@ -26,6 +26,8 @@ const deploy = async () => {
     const factory = new ethers.ContractFactory(metadata.abi, metadata.data.bytecode.object, wallet)
     const contract = await factory.deploy(options)
     await contract.deployed()
+    
+    //interacting the contract after deployment     
     console.log(`Contract Address: ${contract.address}`)
 
 
